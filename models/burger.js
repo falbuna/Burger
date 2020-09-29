@@ -6,7 +6,13 @@ const burger = {
             callback(response);
         });
     },
-    
+    updateOne: function(objColVals, condition, callback){
+        orm.updateOne("burgers", objColVals, condition, function(response){
+            callback(response);
+        });
+    },
 }
+
+
 
 module.exports = burger;
