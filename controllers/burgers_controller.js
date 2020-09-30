@@ -14,18 +14,28 @@ router.get("/", function(request, response){
     });
 });
 
-router.put("/api/burgers/:id", function(req, res){
-    const condition = "id = " + req.params.id;
+router.post("/api/burgers", function(request, response){
+    burger.insertOne([
+        "burger_name", "devoured"
+    ], [
+        request.body.burger_name, request.body.devoured
+    ], function(result){
+        response.json({ id: result.insertId});
+    });
+});
+
+router.put("/api/burgers/:id", function(request, response){
+    const condition = "id = " + request.params.id;
 
     console.log("condition", condition);
 
     burger.updateOne({
-        devoured: req.body.devoured
+        devoured: request.body.devoured
     }, condition, function(result){
         if (result.changedRows == 0){
-            return res.status(404).end();
+            return response.status(404).end();
         } else {
-            res.status(200).end();
+            response.status(200).end();
         };
     });
 }) 

@@ -4,7 +4,7 @@ function printQuestionMarks(num){
     const array = [];
 
     for (let i = 0; i < num; i++){
-        arr.push('?');
+        array.push("?");
     }
 
     return array.toString();
@@ -16,8 +16,8 @@ function objToSql(object){
     for (var key in object) {
         var value = object[key]
 
-        if(Object.hasOwnProperty.call(object, key)){
-            if (typeof value === 'string' && value.indexOf(" ") >= 0){
+        if(Object.hasOwnProperty.call(object, key)) {
+            if (typeof value === "string" && value.indexOf(" ") >= 0) {
                 value = "'" + value + "'";
             }
             array.push(key + "=" + value);
@@ -28,18 +28,37 @@ function objToSql(object){
 }
 
 const orm = {
-    selectAll: function(tableInput, callback){
-        var queryString = "SELECT * FROM " + tableInput + ";";
+
+    selectAll: function(tableInput, callback) {
+        let queryString = "SELECT * FROM " + tableInput + ";";
         connection.query(queryString, [tableInput], function(err, result){
             if(err) throw(err);
             callback(result);
         });
     },
-    insertOne: function(){
 
+    insertOne: function(table, columns, values, callback) {
+        let queryString = "INSERT INTO " + table;
+
+        queryString += " (";
+        queryString += columns.toString();
+        queryString += ") ";
+        queryString += "VALUES (";
+        queryString += printQuestionMarks(values.length);
+        queryString += ") ";
+
+        console.log(queryString);
+
+        connection.query(queryString, values, function(err, result) {
+            if (err) {
+                throw err;
+            }
+            callback(result);
+        });
     },
-    updateOne: function(table, objColsVals, condition, callback){
-        var queryString = "UPDATE " + table;
+
+    updateOne: function(table, objColsVals, condition, callback) {
+        let queryString = "UPDATE " + table;
 
         queryString += " SET ";
         queryString += objToSql(objColsVals);
