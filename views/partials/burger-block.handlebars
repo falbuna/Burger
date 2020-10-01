@@ -1,8 +1,10 @@
-<li>
-    {{ burger_name }}
-    
-    <button class="change-state" data-id="{{id}}" data-devour="{{eaten}}">
-        {{#if eaten}}Devour it!{{else}}Undevour it?{{/if}}
-    </button>
-
-</li>
+<ol>
+    <div class="row">
+        <div class="card card-body">
+            {{ burger_name }}
+        </div>
+        <button type="button" class="btn btn-outline-dark change-state ml-5" data-id="{{id}}" data-devour="{{eaten}}">
+            {{#if eaten}}Devour it!{{else}}Undevour it?{{/if}}
+        </button>
+    </div>
+</ol>
