@@ -1,5 +1,6 @@
 const connection = require("../config/connection.js");
 
+// This function will create the question marks for the MySQL query.
 function printQuestionMarks(num){
     const array = [];
 
@@ -9,7 +10,7 @@ function printQuestionMarks(num){
 
     return array.toString();
 }
-
+// This function will convert the object/key values to MySQL syntax
 function objToSql(object){
     const array = [];
 
@@ -28,7 +29,7 @@ function objToSql(object){
 }
 
 const orm = {
-
+    // This function will get the query to generate all of the data from the database.
     selectAll: function(tableInput, callback) {
         let queryString = "SELECT * FROM " + tableInput + ";";
         connection.query(queryString, [tableInput], function(err, result){
@@ -36,7 +37,7 @@ const orm = {
             callback(result);
         });
     },
-
+    // This function will get the query to add data to the database.
     insertOne: function(table, columns, values, callback) {
         let queryString = "INSERT INTO " + table;
 
@@ -56,7 +57,7 @@ const orm = {
             callback(result);
         });
     },
-
+    // This function will change the state of data in the database. In this case, change from devoured to blank.
     updateOne: function(table, objColsVals, condition, callback) {
         let queryString = "UPDATE " + table;
 

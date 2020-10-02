@@ -1,6 +1,6 @@
 $(function(){
     $(".change-state").on("click", function(event){
-        console.log("I've been clicked!")
+
         const id = $(this).data("id");
         const devour = $(this).data("devour");
 
