@@ -7,6 +7,7 @@
 
 <div class="row mt-2 mb-3">
 
+    {{!-- The left column of the burgers to devour --}}
     <div class="col-4 mx-auto">
         <h3>Burgers in the queue:</h3>
         {{#each burgers}}
@@ -16,7 +17,7 @@
         {{/each}}
     </div>
 
-
+    {{!-- The right column of the burgers to reorder. --}}
     <div class="col-4 mx-auto">
         <h3>Burgers that were eaten:</h3>
         {{#each burgers}}
@@ -31,7 +32,7 @@
 <br>
 
 <form class="create-form">
-
+{{!-- Input Area to add a burger. --}}
     <div class="form-group">
 
         <p>Enter a burger to be added to the queue in the text area and press Submit.</p>
@@ -39,7 +40,7 @@
         <textarea class="col-4" type="text" id="burger" rows="4" name="name"></textarea>
 
     </div>
-    
+    {{!-- Submit button to add a burger. --}}
     <button type="submit" class="btn btn-primary">Submit</button>
 
 </form>

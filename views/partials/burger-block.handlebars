@@ -1,8 +1,10 @@
 <ol>
     <div class="row">
+          {{!-- Creates the card that will hold the burger with the id.  --}}
         <div class="card card-body">
            {{id}}. {{ burger_name }}
         </div>
+        {{!-- Creates the button for the burger that will have "Devour it" or "Reorder it". --}}
         <button type="button" class="btn btn-outline-dark change-state mt-3 ml-4" data-id="{{id}}" data-devour="{{eaten}}">
             {{#if eaten}}Devour it!{{else}}Reorder it!{{/if}}
         </button>

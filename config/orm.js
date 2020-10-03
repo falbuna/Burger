@@ -37,7 +37,7 @@ const orm = {
             callback(result);
         });
     },
-    // This function will get the query to add data to the database.
+    // This function will get the query to add the data to the database when they add a burger to the text area and press submit. 
     insertOne: function(table, columns, values, callback) {
         let queryString = "INSERT INTO " + table;
 
@@ -57,7 +57,7 @@ const orm = {
             callback(result);
         });
     },
-    // This function will change the state of data in the database. In this case, change from devoured to blank.
+    // This function will change the state of the data in the database. In this case, change devoured from false to true.
     updateOne: function(table, objColsVals, condition, callback) {
         let queryString = "UPDATE " + table;
 
@@ -77,4 +77,5 @@ const orm = {
     }
 }
 
+// Export for burger.js in models.
 module.exports = orm;
