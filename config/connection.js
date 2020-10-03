@@ -1,6 +1,6 @@
 const mysql = require("mysql");
 
-// This connection for the Heroku database or the local database. 
+// This is the connection for the Heroku database or the local database. 
 if (process.env.JAWSDB_URL){
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 }else{

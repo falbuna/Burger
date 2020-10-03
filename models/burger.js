@@ -15,8 +15,8 @@ const burger = {
         });
     },
     // The function to update the data in the database.
-    updateOne: function(objColVals, condition, callback){
-        orm.updateOne("burgers", objColVals, condition, function(response){
+    updateOne: function(objects, condition, callback){
+        orm.updateOne("burgers", objects, condition, function(response){
             callback(response);
         });
     },

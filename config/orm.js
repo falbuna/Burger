@@ -58,11 +58,11 @@ const orm = {
         });
     },
     // This function will change the state of the data in the database. In this case, change devoured from false to true.
-    updateOne: function(table, objColsVals, condition, callback) {
+    updateOne: function(table, objects, condition, callback) {
         let queryString = "UPDATE " + table;
 
         queryString += " SET ";
-        queryString += objToSql(objColsVals);
+        queryString += objToSql(objects);
         queryString += " WHERE ";
         queryString += condition;
 
