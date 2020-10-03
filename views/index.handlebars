@@ -1,15 +1,14 @@
 <header class="row" style="background-color: #f7cf3e;">
-    <div class="col-12">
-        <div class="jumbotron jumbotron-fluid" style="background-color: #f7cf3e">
-            <h1>Burger Time!<i class="fas fas-save"></i></h1>
-        </div>
+    <div class="col-12 mb-4">
+            <h1>Burger Time!</h1>
+            <img src="/assets/images/burger.png" width="200" height="200">
     </div>
 </header>
 
 <div class="row mt-2 mb-3">
 
     <div class="col-4 mx-auto">
-        <h2>Burgers in the queue:</h2>
+        <h3>Burgers in the queue:</h3>
         {{#each burgers}}
             {{#unless devoured}}
                 {{> burger-block eaten=true}}
@@ -19,7 +18,7 @@
 
 
     <div class="col-4 mx-auto">
-        <h2>Burgers that were eaten:</h2>
+        <h3>Burgers that were eaten:</h3>
         {{#each burgers}}
             {{#if devoured}}
                 {{> burger-block eaten=false}}
@@ -35,11 +34,12 @@
 
     <div class="form-group">
 
+        <p>Enter a burger to be added to the queue in the text area and press Submit.</p>
+        
         <textarea class="col-4" type="text" id="burger" rows="4" name="name"></textarea>
 
     </div>
     
     <button type="submit" class="btn btn-primary">Submit</button>
-    <p>Enter a burger for the queue in the text area and press Submit.</p>
 
 </form>
