@@ -7,9 +7,9 @@ The link for the burger app can be found here: [https://immense-taiga-11622.hero
 ## Introduction
 
 ## Table of Contents
-*[Description](#Description)
-*[Usage](#Usage)
-*[Questions](#Questions)
+* [Description](#Description)
+* [Usage](#Usage)
+* [Questions](#Questions)
 
 ## Description
 
