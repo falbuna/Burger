@@ -21,23 +21,23 @@ The application uses MySQL, Npde, Express, Handlebards, and ORM to create the bu
 
 When the user visits the application, this what they will see.
 
-![]()
+![Home page for the Burger Time! application](https://github.com/falbuna/Burger/blob/master/Assets/Initial01.png)
 
 The user can add the name of a burger into the text field.
 
-![]()
+![Input a burger into the text area.](https://github.com/falbuna/Burger/blob/master/Assets/burger02.png)
 
 Once they click submit, the burger will be added to the left side, "Burgers in the queue". The user can add as many burgers as they want.
 
-![]()
+![Multiple burgers in the left side.](https://github.com/falbuna/Burger/blob/master/Assets/burger03.png)
 
 When the user clicks on the "Devour it!" button, it will move the burger to the right side, "Burgers that were eaten".
 
-![]()
+![Burger that has been eaten.](https://github.com/falbuna/Burger/blob/master/Assets/burger04.png)
 
 When the user clicks on the "Reorder it!" button, it will move the burger back to the left side.
 
-![]()
+![Burger that got reordered back to the left side.](https://github.com/falbuna/Burger/blob/master/Assets/burger05.png)
 
 ## Questions
 
